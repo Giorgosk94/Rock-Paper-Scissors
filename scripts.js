@@ -1,16 +1,17 @@
-//Event Listeners
 
-RandomChoice()
 
-winlose()
+for (let i = 0; i < 2; i++) {
+    document.getElementById('question-mark1');
+  }
 
 function EventListener(){
-   
+ var r;  
 document.getElementById("hand").addEventListener("click", function(){
 const image = document.getElementById('question-mark1');
-
+var r
  image.src =  document.getElementById('hand').src
- return 1;
+ r==1
+ return r
   })
   
   
@@ -19,20 +20,22 @@ const image = document.getElementById('question-mark1');
 
 document.getElementById("rock").addEventListener("click", function(){
     const image = document.getElementById('question-mark1')
-    
+    var r
       image.src =  document.getElementById('rock').src
-      return 2;
+      r==2
+      return r
       })
       
      
 document.getElementById("scissor").addEventListener("click",  function(){
     const image = document.getElementById('question-mark1');
-    
+    var r
      image.src =  document.getElementById('scissor').src
-     return 3
+     r==3
+     return r;
       })
       
-      
+      return r
 }
     
       function RandomChoice() {
@@ -45,13 +48,15 @@ document.getElementById("scissor").addEventListener("click",  function(){
         else if (random==2)
         {
              document.getElementById("question-mark2").src=document.getElementById("rock").src;
-             return 2;
+             return 2
         }
         else  (random==3)
         {
             document.getElementById("question-mark2").src=document.getElementById("scissor").src;
-        return 3;
+        return 3
         }
+
+     
       }
     
 
@@ -62,10 +67,74 @@ document.getElementById("scissor").addEventListener("click",  function(){
 
 function winlose(){
     
-if((EventListener()==1)===(RandomChoice()==1))
+if((EventListener()==1)==(RandomChoice()==1))
 {
    
  document.getElementById("win-lose").innerHTML="Draw"
+
+    
+
+}
+else if((EventListener()==1)==(RandomChoice()==2))
+{
+   
+ document.getElementById("win-lose").innerHTML="win"
+
+    
+
+}
+else if((EventListener()==1)==(RandomChoice()==3))
+{
+   
+ document.getElementById("win-lose").innerHTML="lose"
+
+    
+
+}
+else if((EventListener()==2)==(RandomChoice()==1))
+{
+   
+ document.getElementById("win-lose").innerHTML="lose"
+
+    
+
+}
+else if((EventListener()==2)==(RandomChoice()==2))
+{
+   
+ document.getElementById("win-lose").innerHTML="draw"
+
+    
+
+}
+else if((EventListener()==2)==(RandomChoice()==3))
+{
+   
+ document.getElementById("win-lose").innerHTML="win"
+
+    
+
+}
+else if((EventListener()==3)==(RandomChoice()==1))
+{
+   
+ document.getElementById("win-lose").innerHTML="win"
+
+    
+
+}
+else if((EventListener()==3)==(RandomChoice()==2))
+{
+   
+ document.getElementById("win-lose").innerHTML="lose"
+
+    
+
+}
+else if((EventListener()==3)==(RandomChoice()==3))
+{
+   
+ document.getElementById("win-lose").innerHTML="draw"
 
     
 
