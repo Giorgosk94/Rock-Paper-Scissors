@@ -1,233 +1,131 @@
-/* 
-function hand(){
+var i = 0; 
+var g = 0; 
+    round()
+
+function round(){
+function RandomChoice() {
+    random=Math.floor(Math.random() * 3)+1;
+    if (random===1)
+    {
+      
+         document.getElementById("question-mark2").src=document.getElementById("hand").src
+       return random
+       
+       
+    }
+    else if (random===2)
+    {  
+         document.getElementById("question-mark2").src=document.getElementById("rock").src
+      return random
    
-const image = document.getElementById('question-mark1');
-
-     image.src =  document.getElementById('hand').src
-   return 1
- 
-      }
-
-      function rock(){
+       
+    }
+    else if  (random===3)
+    {  
+        document.getElementById("question-mark2").src=document.getElementById("scissor").src
+        return random
       
-          
-    
-        const image = document.getElementById('question-mark1')
-          image.src =  document.getElementById('rock').src
-        return 2
-          
-          }
-    
-    
-function scissor(){
-    
-    
-    const  image = document.getElementById('question-mark1')
-    image.src= document.getElementById('scissor').src 
-   return 3
-      }
-
+    }
 
  
-document.getElementById("hand").addEventListener("click",hand)
-
-
-document.getElementById("rock").addEventListener("click",rock )
-
-    
-     
-document.getElementById("scissor").addEventListener("click",scissor)
- */
-      
-    
-
-    /* 
-      function RandomChoice() {
-        random=Math.floor(Math.random() * 3);
-        if (random==1)
-        {
-             document.getElementById("question-mark2").src=document.getElementById("hand").src;
-           
-            return random
-        }
-        else if (random==2)
-        {
-             document.getElementById("question-mark2").src=document.getElementById("rock").src;
-          
-            return random
-        }
-        else if  (random==3)
-        {
-            document.getElementById("question-mark2").src=document.getElementById("scissor").src;
-            
-           return random
-        }
-
-     
-      } */
-
-
-
-   /*   function win(){
-        
-        if(((RandomChoice()==1)&&(hand()==1))||((RandomChoice()==2)&&(rock()==2))||((RandomChoice()==3)&&(scissor()==3))){
-            document.getElementById("win-lose").innerHTML="draw"
-        }
-        else if(((RandomChoice()==1)&&(rock()==2))||((RandomChoice()==2)&&(scissor()==3))||((RandomChoice()==3)&&(hand()==1))){
-            document.getElementById("win-lose").innerHTML="win"
-        }
-        else if(((RandomChoice()==1)&&(scissor()==3))||((RandomChoice()==3)&&(rock()==2))||((RandomChoice()==2)&&(hand()==1))){
-            document.getElementById("win-lose").innerHTML="lose"
-           
-        }
-        } */
-
-
-     /*    function win(){
-        
-            if((RandomChoice()==1)&&(hand()==1)){
-                document.getElementById("win-lose").innerHTML="draw"
-            }
-            else if((RandomChoice()==2)&&(rock()==2)){
-                document.getElementById("win-lose").innerHTML="draw"
-            }
-            else if((RandomChoice()==3)&&(scissor()==3)){
-                document.getElementById("win-lose").innerHTML="draw"
-               
-            }
-
-
-            else if((RandomChoice()==1)&&(hand()==2)){
-                document.getElementById("win-lose").innerHTML="lose"
-            }
-            else if((RandomChoice()==2)&&(rock()==3)){
-                document.getElementById("win-lose").innerHTML="lose"
-            }
-            else if((RandomChoice()==3)&&(scissor()==1)){
-                document.getElementById("win-lose").innerHTML="lose"
-               
-            }
-
-
-
-            else if((RandomChoice()==1)&&(hand()==3)){
-                document.getElementById("win-lose").innerHTML="win"
-            }
-            else if((RandomChoice()==3)&&(rock()==2)){
-                document.getElementById("win-lose").innerHTML="win"
-            }
-            else if((RandomChoice()==2)&&(scissor()==1)){
-                document.getElementById("win-lose").innerHTML="win"
-               
-            }
-      
-
-            } */
-    
-/* function win(){
-if((RandomChoice()==1)&&(hand()==1))
-{
-    document.getElementById("win-lose").innerHTML="draw"
-}
-} */
+  }
 
 
 
 
+document.getElementById("hand").addEventListener("click",function() {
 
 
-      function RandomChoice() {
-        random=Math.floor(Math.random() * 3);
-        if (random==1)
-        {
-             document.getElementById("question-mark2").src=document.getElementById("hand").src;
-           
-            return random
-        }
-        else if (random==2)
-        {
-             document.getElementById("question-mark2").src=document.getElementById("rock").src;
-          
-            return random
-        }
-        else 
-        {
-            document.getElementById("question-mark2").src=document.getElementById("scissor").src;
-            
-           return random
-        }
-
-     
-      }
-
-
-
-document.getElementById("hand").onclick = function() {myFunction1()};
-
-function myFunction1() {
     const image = document.getElementById('question-mark1');
 
     image.src =  document.getElementById('hand').src
-    RandomChoice()
-    if (RandomChoice()==1)
+     Random=RandomChoice()
+    if (Random===1)
     {
         document.getElementById("win-lose").innerHTML="draw"
+        
+      
     }
-    else if (RandomChoice()==2)
-    {
+    else if (Random===2)
+    { 
+        i=i+1;
         document.getElementById("win-lose").innerHTML="win"
+        
+       document.getElementById("win").innerHTML=i
     }
-    else      {
+    else if (Random===3)     { 
+        g=g+1;
         document.getElementById("win-lose").innerHTML="lose"
+        
+        document.getElementById("lose").innerHTML=g;
     }
+  
+  
+});
 
-}
+document.getElementById("rock").addEventListener("click",function() {
 
-document.getElementById("rock").onclick = function() {myFunction2()};
 
-function myFunction2() {
     const image = document.getElementById('question-mark1');
 
     image.src =  document.getElementById('rock').src
-    RandomChoice()
-    RandomChoice()
-    if (RandomChoice()==1)
-    {
-        document.getElementById("win-lose").innerHTML="lose"
-    }
-    else if (RandomChoice()==2)
-    {
+    Random=RandomChoice()
+  
+    if (Random===2)
+    {  
         document.getElementById("win-lose").innerHTML="draw"
     }
-    else      {
-        document.getElementById("win-lose").innerHTML="win"
+    else if (Random===1)
+    {   
+        g=g+1;
+        document.getElementById("win-lose").innerHTML="lose"
+       
+        document.getElementById("lose").innerHTML=g
     }
-}
+    else  if (Random===3)   {   
+        i=i+1;
+        document.getElementById("win-lose").innerHTML="win"
+        document.getElementById("win").innerHTML =i;
+
+        
+    }
+    
+});
 
 
-document.getElementById("scissor").onclick = function() {myFunction3()};
+document.getElementById("scissor").addEventListener("click",function() {
 
-function myFunction3() {
+
     const image = document.getElementById('question-mark1');
     
     image.src =  document.getElementById('scissor').src
-    RandomChoice()
-    if (RandomChoice()==1)
-    {
-        document.getElementById("win-lose").innerHTML="win"
-    }
-    else if (RandomChoice()==2)
-    {
-        document.getElementById("win-lose").innerHTML="lose"
-    }
-    else      {
+    var Random=RandomChoice()
+    if (Random===3)
+    {   
         document.getElementById("win-lose").innerHTML="draw"
     }
+    else if (Random===2)
+    {  
+        g=g+1;
+        document.getElementById("win-lose").innerHTML="lose"
+       
+        value=document.getElementById("lose").innerHTML=g;
+    }
+    else  if (Random===1){   
+        i=i+1;
+        document.getElementById("win-lose").innerHTML="win"
+      
+        document.getElementById("win").innerHTML=i;
 
-}
+    }
+});
+
+
               
                
+}
 
+    
 
 
 
